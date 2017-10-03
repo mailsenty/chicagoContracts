@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" url="http://www.mulesoft.org/schema/mule/chicago-contracts" prefix="chicago-contracts">
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="ChicagoContracts" description="" icon="" localId="parentConfig" image="" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-contracts/abstractChicago-contractsConnectorGeneric"></global-cloud-connector>
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="ChicagoContracts: Configuration" description="Global Configuration configuration information." icon="icons/theme.classic/chicago-contracts-connector-small.png" localId="config" image="icons/theme.classic/chicago-contracts-connector-large.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/chicago-contracts/parentConfig" connectivityTesting="off" metaData="static" metaDataKeyDisplay="DISPLAY_NAME" supportsUserDefinedMetaData="false">
+    <attribute-category caption="General" description="Chicago-contracts configuration properties.">
+      <group id="chicago-contractsGenericProperties" caption="Basic Settings">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="general" caption="General">
+        <string defaultValue="Hello" name="greeting" caption="Greeting" description="Greeting message." supportsExpressions="false" required="false" javaType="java.lang.String"></string>
+        <string defaultValue="How are you?" name="reply" caption="Reply" description="Reply message." supportsExpressions="false" required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector caption="Abstractchicago-contractsconnectorgeneric" description="Interact with Chicago-contracts." icon="icons/theme.classic/chicago-contracts-connector-small.png" localId="abstractChicago-contractsConnectorGeneric" image="icons/theme.classic/chicago-contracts-connector-large.png" abstract="true">
+    <attribute-category caption="General" description="General.">
+      <group id="abstractChicago-contractsConnectorGeneric" caption="Basic Settings">
+        <globalRef requiredType="http://www.mulesoft.org/schema/mule/chicago-contracts/config" name="config-ref" caption="Connector Configuration" description="Specify which configuration to use for this invocation." required="true"></globalRef>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector versions="[3.5.0,8.0.0]" aliasId="org.mule.tooling.ui.modules.core.pattern.chicago-contracts" caption="ChicagoContracts" description="" icon="icons/theme.classic/chicago-contracts-connector-small.png" localId="chicago-contracts-connector" image="icons/theme.classic/chicago-contracts-connector-large.png" extends="http://www.mulesoft.org/schema/mule/chicago-contracts/abstractChicago-contractsConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="chicago-contractsConnectorGeneric" caption="Basic Settings">
+        <modeSwitch alwaysCombo="true" name="Chicago-contracts operations to execute" caption="Operation" description="Operation.">
+          <no-operation abstractElement="http://www.mulesoft.org/schema/mule/chicago-contracts/abstractChicago-contractsConnectorGeneric" versions="[3.5.0,8.0.0]" connector-name="processor"></no-operation>
+          <mode modeId="http://www.mulesoft.org/schema/mule/chicago-contracts/find-on-end-date" modeLabel="Find on end date"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/chicago-contracts/find-on-start-date" modeLabel="Find on start date"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/chicago-contracts/find-on-vendor-id" modeLabel="Find on vendor id"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/chicago-contracts/find-on-zip" modeLabel="Find on zip"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Find On End Date" icon="icons/theme.classic/chicago-contracts-connector-small.png" localId="find-on-end-date" image="icons/theme.classic/chicago-contracts-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-contracts/abstractChicago-contractsConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="end_date" caption="End_date" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Find On Start Date" icon="icons/theme.classic/chicago-contracts-connector-small.png" localId="find-on-start-date" image="icons/theme.classic/chicago-contracts-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-contracts/abstractChicago-contractsConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="startDate" caption="Start Date" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Find On Vendor Id" icon="icons/theme.classic/chicago-contracts-connector-small.png" localId="find-on-vendor-id" image="icons/theme.classic/chicago-contracts-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-contracts/abstractChicago-contractsConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="vendorId" caption="Vendor Id" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Find On Zip" icon="icons/theme.classic/chicago-contracts-connector-small.png" localId="find-on-zip" image="icons/theme.classic/chicago-contracts-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-contracts/abstractChicago-contractsConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="zip" caption="Zip" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+</namespace>
